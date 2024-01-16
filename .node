@@ -1,0 +1,70 @@
+// Nguyễn Minh Lương
+const [first, , ,second] = restaurant.categories; // có thể để rỗng để lấy phần tử mong muốn
+// => or (||) và ?: tương tự nhưng or(||) có thể nhận nhiều giá trị hơn và trả về giá trị gần nhất là truthy(true)
+
+
+const nested = [2, 4, [5, 6]];
+//const [i, ,j] = nested; i = 2, j = [5,6]
+const [i, ,[j, k]] = nested;
+console.log(i, j, k); 
+// Default values
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r);
+
+// Cách hoạt động của toán tử "&&" như sau:
+// Nếu cả hai biểu thức được đánh giá đều là "truthy", thì toán tử "&&" trả về giá trị cuối cùng được đánh giá.
+// Nếu một trong hai biểu thức là "falsy" (false, null, undefined, 0 hoặc rỗng), thì toán tử "&&" trả về giá trị đó.
+
+
+// The Nullish Coalescing Operator 
+// Toán tử Nullish Coalescing hoạt động như sau:
+// Nếu giá trị bên trái của toán tử "??" là null hoặc undefined, thì toán tử trả về giá trị bên phải.
+// Nếu giá trị bên trái của toán tử "??" không phải là null hoặc undefined, thì toán tử trả về giá trị bên trái.
+// Nếu cả 2 đều là null hoặc underfired thì sẽ trả về giá trị cuối cùng
+
+const {name: restaurantName, openingHours: hours, categories: tags} = restaurant; 
+console.log(restaurantName, hours, tags);
+// Default values
+const {menu = [],starterMenu: starters = []} = restaurant;
+console.log(menu, starters);
+
+// SPREAD, because on RIGHT side of = 
+const arr = [1, 2, ...[3, 4]]; // ...[3,4] sẽ trả về tất cả giá trị trong mảng này vậy nên ouput của arr sẽ là [1,2,3,4]
+console.log(arr);
+// REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];// ...others sẽ đưa hết các phần tử còn lại vào 1 mảng nên ouput của others sẽ là [3,4,5]
+console.log(a, b, others);
+
+
+// Object.key,value,entries
+
+// Trong JavaScript, một Set là một cấu trúc dữ liệu được sử dụng để lưu trữ các phần tử không trùng lặp.
+//  Một Set có thể chứa các giá trị bất kỳ, bao gồm cả các giá trị nguyên, chuỗi, đối tượng và các giá trị khác.
+// size, has, add, delete, clear
+
+//Trong JavaScript, một Map là một cấu trúc dữ liệu được sử dụng để lưu trữ cặp khóa-giá trị. Trong Map,
+// mỗi phần tử được lưu trữ dưới dạng một cặp khóa-giá trị duy nhất,
+//  và khóa được sử dụng để truy cập và xác định giá trị tương ứng.
+//  get,set,size,delete,clear,has
+
+// FULL CHUỖI : challange 4 
+
+// indexOf, lastIndexOf, slice(trích xuất chuỗi), toLowerCase, toUpperCase, trim(xóa khoảng trắng), replace(thay thế giá trị),
+// includes(kiểm tra chuỗi con), startwith, endwith, padStart, padEnd
+// split()-tạo mảng từ kí tự, join() kết hợp các phần tử trong mảng thành 1 chuỗi,reapeat(2) lặp lại chuỗi dựa trên số truyền vào
+
+// Trong JavaScript, phương thức join() được sử dụng để kết hợp các 
+// phần tử của một mảng thành một chuỗi duy nhất. Phương thức này trả về 
+// một chuỗi mới được tạo bằng cách nối các phần tử của mảng với một ký tự phân tách (separator) tùy chọn
+
+
+// Trong JavaScript, phương thức split() được sử dụng để
+//  tách một chuỗi thành một mảng các chuỗi con dựa trên một ký tự hoặc biểu thức chính
+//  quy (regular expression) cho trước. Phương thức này trả về một mảng chứa các phần tử là các chuỗi con đã được tách.
+
+// Trong JavaScript, phương thức slice() được sử dụng để trích 
+// xuất một phần của một chuỗi, một mảng hoặc một thành phần của một
+//  mảng và trả về một mảng mới chứa các phần tử đã trích xuất.
+
+// Trong JavaScript, phương thức repeat() được sử dụng để tạo ra
+//  một chuỗi mới bằng cách lặp lại một chuỗi đã cho một số lần xác định.
