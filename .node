@@ -47,7 +47,7 @@ console.log(a, b, others);
 //  và khóa được sử dụng để truy cập và xác định giá trị tương ứng.
 //  get,set,size,delete,clear,has
 
-// FULL CHUỖI : challange 4 
+// FULL CHUỖI : challange 4 session 9
 
 // indexOf, lastIndexOf, slice(trích xuất chuỗi), toLowerCase, toUpperCase, trim(xóa khoảng trắng), replace(thay thế giá trị),
 // includes(kiểm tra chuỗi con), startwith, endwith, padStart, padEnd
@@ -68,3 +68,5 @@ console.log(a, b, others);
 
 // Trong JavaScript, phương thức repeat() được sử dụng để tạo ra
 //  một chuỗi mới bằng cách lặp lại một chuỗi đã cho một số lần xác định.
+
+// Set,Map challenge 3 sesion 9
