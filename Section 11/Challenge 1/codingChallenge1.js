@@ -15,8 +15,7 @@ checkDogs(dogsJulia, dogsKate);
 console.log("----------- TEST DATA 2 -----------");
 checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 
-// Code by Jonas
-
+// Code by Jonas Schmedtmann
 const checkDogsJ = function (dogsJulia, dogsKate){
     const dogsJuliaCorrected = dogsJulia.slice();
     dogsJuliaCorrected.splice(0,1);

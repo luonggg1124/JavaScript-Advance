@@ -27,7 +27,7 @@ const account4 = {
     pin: 4444
 }
 
-const account = [account1, account2, account3, account4];
+const accounts = [account1, account2, account3, account4];
 
 //////////////////////////////////////////////////////////////////
 // APP
@@ -72,4 +72,34 @@ const displayMovements = function(movements){
     });
 };
 displayMovements(account1.movements);
+
+
+const calcPrintBalance = function(movements){
+    const balance = movements.reduce((acc, cur)=> acc+cur,0);
+    labelBalance.textContent = `${balance} EUR`;
+}
+calcPrintBalance(account1.movements);
+
 //console.log(containerMovements.innerHTML);
+const user = 'Steven Thomas Williams';
+// const userName = user.toLowerCase()
+//     .split(' ')
+//     .map((name) => name[0])
+//     .join('');
+const createUsernames = function (accs) {
+    accs.forEach(function(acc) {
+       acc.username = acc.owner
+        .toLowerCase()
+        .split(' ')
+        .map((name) => name[0])
+        .join('');
+       
+    });
+   
+};
+createUsernames(accounts);
+accounts.forEach(element => {
+    console.log(element.username);
+});
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
