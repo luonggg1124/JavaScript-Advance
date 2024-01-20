@@ -70,3 +70,5 @@ console.log(a, b, others);
 //  một chuỗi mới bằng cách lặp lại một chuỗi đã cho một số lần xác định.
 
 // Set,Map challenge 3 sesion 9
+
+// var?.pin trong js(dấu?. ngăn cản lỗi typeError trong js)

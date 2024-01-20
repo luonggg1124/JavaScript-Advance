@@ -71,14 +71,28 @@ const displayMovements = function(movements){
 
     });
 };
-displayMovements(account1.movements);
+
 
 
 const calcPrintBalance = function(movements){
     const balance = movements.reduce((acc, cur)=> acc+cur,0);
     labelBalance.textContent = `${balance} EUR`;
 }
-calcPrintBalance(account1.movements);
+
+
+const calcDisplaySummary = function (account) {
+    const incomes = account.movements.filter(mov => mov > 0).reduce((acc, mov)=> acc+mov,0);
+    labelSumIn.textContent = `${incomes}€`;
+    const out = account.movements.filter(mov => mov < 0).reduce((acc,mov) =>acc+mov,0);
+    labelSumOut.textContent = `${Math.abs(out)}€`;
+    
+    const interest = account.movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * account.interestRate) / 100)
+    .filter(int=> int>=1)
+    .reduce((acc,mov) =>acc+mov,0);
+    labelSumInterest.textContent = `${interest.toFixed(2)}€`;
+}
 
 //console.log(containerMovements.innerHTML);
 const user = 'Steven Thomas Williams';
@@ -98,8 +112,28 @@ const createUsernames = function (accs) {
    
 };
 createUsernames(accounts);
-accounts.forEach(element => {
-    console.log(element.username);
+
+btnLogin.addEventListener('click',function (e) {
+    //Prevent form from submitting
+    e.preventDefault();
+    
+    const currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+    if(currentAccount?.pin === Number(inputLoginPin.value)){
+        labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(" ")[0]}`;
+        containerApp.style.opacity = 1;
+        inputCloseUsername.value = inputLoginPin.value = '';
+        inputClosePin.blur();
+        displayMovements(currentAccount.movements);
+        calcPrintBalance(currentAccount.movements);
+        calcDisplaySummary(currentAccount);
+    }
+    
 });
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// accounts.forEach(element => {
+//     console.log(element.username);
+// });
+
+//const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+//console.log(account);
+
