@@ -1,0 +1,16 @@
+{
+  "product": [
+    {
+      "id": "1",
+      "name": "Product 2",
+      "price": "1000"
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "name": "admin",
+      "password": "123456"
+    }
+  ]
+}
